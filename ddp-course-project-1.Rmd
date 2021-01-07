@@ -1,0 +1,31 @@
+---
+title: "Developing Data Products Course Project 1"
+author: "koraxus"
+date: "1/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Get current date
+my_date<-format(Sys.time(), "%a %b %d %X %Y")
+
+```
+
+## `r my_date`
+
+```{r}
+
+
+library(leaflet)
+
+#In-n-Out Aurora, CO 39.710720 -104.822550
+my_map<-leaflet() %>%
+  addTiles() %>%
+  fitBounds(0, 40, 10, 50) %>%
+  setView(lat=39.710720, lng=-104.822550, zoom = 17) %>%
+  addMarkers(lng=-104.822550,lat=39.710720)
+
+my_map
+```
+
